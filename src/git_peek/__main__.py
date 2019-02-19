@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
+import os
 import sys
 import logging
 from git_peek.parse_arguments import *
@@ -12,6 +12,12 @@ __license__ = "mit"
 
 _logger = logging.getLogger(__name__)
 
+def git_log_command_builder(args) -> str:
+  cmd = "git log"
+  if args.author != None:
+    cmd += f" --author \"{args.author}\""
+  return cmd
+
 def main(args):
     """Main entry point allowing external calls
 
@@ -20,7 +26,8 @@ def main(args):
     """
     args = parse_args(args)
     setup_logging(args.loglevel)
-    _logger.debug("Starting crazy calculations...")
+    _logger.debug("Starting crazy calculations..." + args.author)
+    os.system(git_log_command_builder(args))
     _logger.info("Script ends here")
 
 
