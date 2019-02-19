@@ -16,6 +16,8 @@ def git_log_command_builder(args) -> str:
   cmd = "git log"
   if args.author != None:
     cmd += f" --author \"{args.author}\""
+  cmd += " --pretty=format:\"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset\" --abbrev-commit"
+  print(cmd)
   return cmd
 
 def main(args):
