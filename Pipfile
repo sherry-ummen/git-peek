@@ -9,6 +9,7 @@ mypy = "*"
 autopep8 = "*"
 
 [packages]
+colorama = "*"
 
 [requires]
 python_version = "3.7"

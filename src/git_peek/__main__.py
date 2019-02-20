@@ -3,6 +3,8 @@
 import os
 import sys
 import logging
+import subprocess
+from colorama import Fore, Back, Style
 from git_peek.parse_arguments import *
 from subprocess import call, STDOUT
 
@@ -32,6 +34,15 @@ def main(args):
     args = parse_args(args)
     if args.fetch_all:
       os.system('git fetch --all')
+
+    if args.new_branches:
+      c = subprocess.check_output(
+            "git fetch --all --dry-run", stderr=subprocess.STDOUT).decode('UTF-8').splitlines()
+      branches_new = list(map(lambda x: x[28:],list(filter(lambda x: x.startswith(' * [new branch]'), c))))
+      print(Fore.GREEN, *branches_new,sep='\n')
+      print(Style.RESET_ALL)
+      return
+
     setup_logging(args.loglevel)
     _logger.debug("Starting operation.. " + args.author)
     os.system(git_log_command_builder(args))

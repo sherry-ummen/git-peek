@@ -23,6 +23,8 @@ def parse_args(args):
                         help='limit the number of log lines', default=100)
     parser.add_argument('-f', '--fetch', dest='fetch_all',
                         help='fetch all before showing the log entries', action='store_true', default=False)
+    parser.add_argument('-nb', '--new-branches', dest='new_branches',
+                        help='show new branches which are not fetched yet', action='store_true', default=False)
     return parser.parse_args(args)
 
 
