@@ -18,8 +18,8 @@ def git_log_command_builder(args) -> str:
     cmd += f" --author \"{args.author}\""
   if args.across:
     cmd += " --all"
-    
-  cmd += " --pretty=format:\"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset\" --abbrev-commit"
+
+  cmd += f" -n {args.line_limit} --pretty=format:\"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset\" --abbrev-commit"
   print(cmd)
   return cmd
 

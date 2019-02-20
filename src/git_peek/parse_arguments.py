@@ -19,6 +19,8 @@ def parse_args(args):
                         help="commit author", type=str, default=git_user)
     parser.add_argument('-x', '--across', dest='across',
                         help="show commit across all branches", action='store_true', default=False)
+    parser.add_argument('-n', '--nl', dest='line_limit',
+                        help='limit the number of log lines', default=100)
     return parser.parse_args(args)
 
 
