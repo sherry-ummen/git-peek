@@ -39,6 +39,9 @@ def main(args):
       c = subprocess.check_output(
             "git fetch --all --dry-run", stderr=subprocess.STDOUT).decode('UTF-8').splitlines()
       branches_new = list(map(lambda x: x[28:],list(filter(lambda x: x.startswith(' * [new branch]'), c))))
+      if not any(branches_new):
+        print('No new branches found!')
+        return
       print(Fore.GREEN, *branches_new,sep='\n')
       print(Style.RESET_ALL)
       return
