@@ -1,5 +1,5 @@
 ========
-git-peek (Still work in progress)
+git-peek
 ========
 
 
