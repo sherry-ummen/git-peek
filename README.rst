@@ -9,7 +9,7 @@ Python script to peek what various commits someone did
 Description
 ===========
 usage: git-peek [-h] [--version] [-v] [-vv] [-a AUTHOR] [-x] [-n LINE_LIMIT]
-                [-f]
+                [-f] [-nb]
 
 Git Peek
 
