@@ -4,6 +4,8 @@ git-peek
 
 Installation
 ============
+pip install git-peek
+
 pip install git+https://github.com/sherry-ummen/git-peek.git
 
 Description
@@ -29,3 +31,30 @@ optional arguments:
                         limit the number of log lines
   -f, --fetch           fetch all before showing the log entries
   -nb, --new-branches   show new branches which are not fetched yet
+
+Examples:
+=========
+
+* Check commits from you in the current branch
+
+  **git-peek**
+
+* Check commit from some specific user
+
+  **git-peek -a "Johnny English"**
+
+* Limit the number of lines of output
+
+  **git-peek -a "Johnny English" -n 10**
+
+* Check commit from user across branches
+
+  **git-peek -a "Johnny English" -n 10 -x**
+
+* git fetch --all before listing the commits
+
+  **git-peek -a "Johnny English" -n 10 -f**
+
+* list all the new branches since you last fetched (Note: It will just do a dry run)
+
+  **git-peek -nb**
