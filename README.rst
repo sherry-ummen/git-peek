@@ -24,3 +24,4 @@ optional arguments:
   -n LINE_LIMIT, --nl LINE_LIMIT
                         limit the number of log lines
   -f, --fetch           fetch all before showing the log entries
+  -nb, --new-branches   show new branches which are not fetched yet
