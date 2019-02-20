@@ -4,6 +4,7 @@ import os
 import sys
 import logging
 from git_peek.parse_arguments import *
+from subprocess import call, STDOUT
 
 
 __author__ = "Sherry Ummen"
@@ -24,11 +25,10 @@ def git_log_command_builder(args) -> str:
   return cmd
 
 def main(args):
-    """Main entry point allowing external calls
-
-    Args:
-      args ([str]): command line parameter list
-    """
+    if not _is_git_repo():
+      print('Not a git repo. Program will exit!')
+      return
+      
     args = parse_args(args)
     if args.fetch_all:
       os.system('git fetch --all')
@@ -37,12 +37,14 @@ def main(args):
     os.system(git_log_command_builder(args))
     _logger.info("Script ends here")
 
-
 def run():
-    """Entry point for console_scripts
-    """
     main(sys.argv[1:])
 
+def _is_git_repo() -> bool:
+    if call(["git", "branch"], stderr=STDOUT, stdout=open(os.devnull, 'w')) != 0:
+      return False
+    else:
+      return True
 
 if __name__ == "__main__":
     run()
