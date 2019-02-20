@@ -15,7 +15,10 @@ def parse_args(args):
         '-v', '--verbose', dest="loglevel", help="set loglevel to INFO", action='store_const', const=logging.INFO)
     parser.add_argument(
         '-vv', '--very-verbose', dest="loglevel", help="set loglevel to DEBUG", action='store_const', const=logging.DEBUG)
-    parser.add_argument('-a', '--author', dest="author", help="commit author", type=str, default=git_user)
+    parser.add_argument('-a', '--author', dest="author",
+                        help="commit author", type=str, default=git_user)
+    parser.add_argument('-x', '--across', dest='across',
+                        help="show commit across all branches", action='store_true', default=False)
     return parser.parse_args(args)
 
 
