@@ -2,9 +2,11 @@
 Changelog
 =========
 
-Version 0.1
+Version 1.0
 ===========
 
-- Feature A added
-- FIX: nasty bug #1729 fixed
-- add your changes here!
+- Filter by author
+- limit number of log entries
+- list across different branches
+- fetch before listing
+- show new branches which are not fetched yet

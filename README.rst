@@ -2,11 +2,16 @@
 git-peek
 ========
 
+Installation
+============
+pip install git+https://github.com/sherry-ummen/git-peek.git
 
+Description
+===========
 Python script to peek what various commits someone did
 
 
-Description
+Usage
 ===========
 usage: git-peek [-h] [--version] [-v] [-vv] [-a AUTHOR] [-x] [-n LINE_LIMIT] [-f] [-nb]
 
