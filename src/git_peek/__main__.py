@@ -28,12 +28,12 @@ def main(args):
     if not _is_git_repo():
       print('Not a git repo. Program will exit!')
       return
-      
+
     args = parse_args(args)
     if args.fetch_all:
       os.system('git fetch --all')
     setup_logging(args.loglevel)
-    _logger.debug("Starting crazy calculations..." + args.author)
+    _logger.debug("Starting operation.. " + args.author)
     os.system(git_log_command_builder(args))
     _logger.info("Script ends here")
 
