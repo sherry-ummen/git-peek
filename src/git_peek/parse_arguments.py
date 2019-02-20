@@ -8,7 +8,7 @@ import logging
 def parse_args(args):
     git_user = os.popen("git config user.name").read().strip()
     parser = argparse.ArgumentParser(
-        description="Git Peek")
+        description="Git Peek", allow_abbrev=False)
     parser.add_argument('--version', action='version',
                         version='git-peek {ver}'.format(ver=__version__))
     parser.add_argument(
@@ -21,6 +21,8 @@ def parse_args(args):
                         help="show commit across all branches", action='store_true', default=False)
     parser.add_argument('-n', '--nl', dest='line_limit',
                         help='limit the number of log lines', default=100)
+    parser.add_argument('-f', '--fetch', dest='fetch_all',
+                        help='fetch all before showing the log entries', action='store_true', default=False)
     return parser.parse_args(args)
 
 

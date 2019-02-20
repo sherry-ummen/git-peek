@@ -30,6 +30,8 @@ def main(args):
       args ([str]): command line parameter list
     """
     args = parse_args(args)
+    if args.fetch_all:
+      os.system('git fetch --all')
     setup_logging(args.loglevel)
     _logger.debug("Starting crazy calculations..." + args.author)
     os.system(git_log_command_builder(args))
