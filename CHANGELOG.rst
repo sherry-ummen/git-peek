@@ -2,6 +2,11 @@
 Changelog
 =========
 
+Version 1.3
+===========
+
+- Updated examples
+
 Version 1.2
 ===========
 

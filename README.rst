@@ -56,7 +56,8 @@ Examples:
   **git-peek -a "Johnny English" -n 10 -f**
 
 * list commits from all users across branches
-  **git-peek -a " " -n 10 -f**
+
+  **git-peek -a " " -n 10 -f -x**
 
 * list all the new branches since you last fetched (Note: It will just do a dry run)
 
