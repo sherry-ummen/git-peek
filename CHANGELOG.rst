@@ -2,6 +2,13 @@
 Changelog
 =========
 
+Version 1.2
+===========
+
+- Changed color for author
+- Updated examples
+
+
 Version 1.0
 ===========
 
